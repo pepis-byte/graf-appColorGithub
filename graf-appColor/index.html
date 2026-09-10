@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <!-- =====================================================
+         CONFIGURACIÓN BÁSICA
+         ===================================================== -->
+
+    <meta charset="UTF-8">
+
+    <!-- Adaptación para celulares -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Práctica Colores RGB</title>
+
+
+    <!-- =====================================================
+         BOOTSTRAP
+         ===================================================== -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         ICONOS DE BOOTSTRAP
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+
+    <!-- =====================================================
+         NUESTRO ARCHIVO CSS
+
+         IMPORTANTE:
+         El CSS está dentro de la carpeta css.
+         ===================================================== -->
+
+    <link rel="stylesheet" href="css/estilo.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         CONTENEDOR PRINCIPAL
+         ===================================================== -->
+
+    <main class="container py-5">
+
+        <div class="app-card">
+
+
+            <!-- =================================================
+                 ENCABEZADO
+                 ================================================= -->
+
+            <header class="text-center mb-5">
+
+                <div class="titulo-icono">
+
+                    <i class="bi bi-palette-fill"></i>
+
+                </div>
+
+
+                <h1>
+                    Práctica Colores RGB
+                </h1>
+
+
+                <p>
+                    Modifica los valores RGB y crea tu propio color
+                </p>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 CONTENIDO PRINCIPAL
+                 ================================================= -->
+
+            <div class="row g-5 align-items-center">
+
+
+                <!-- =================================================
+                     COLUMNA DEL ÁGUILA
+                     ================================================= -->
+
+                <div class="col-lg-6">
+
+                    <div class="preview-section">
+
+
+                        <!-- Título -->
+
+                        <div class="section-title">
+
+                            <i class="bi bi-eye-fill"></i>
+
+                            <span>Vista previa</span>
+
+                        </div>
+
+
+                        <!-- =================================================
+                             ÁREA DEL ÁGUILA
+                             ================================================= -->
+
+                        <div
+                            id="colorBox"
+                            class="color-box"
+                        >
+
+                            <!--
+                                Aquí se mostrará el águila.
+
+                                La imagen PNG se utiliza como máscara
+                                para permitir cambiar su color.
+                            -->
+
+                            <div
+                                id="aguila"
+                                class="aguila"
+                            ></div>
+
+                        </div>
+
+
+                        <!-- Descripción -->
+
+                        <p class="preview-description">
+
+                            <i class="bi bi-info-circle"></i>
+
+                            Cambia los valores RGB para modificar
+                            el color de la imagen.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     COLUMNA DE CONTROLES
+                     ================================================= -->
+
+                <div class="col-lg-6">
+
+                    <div class="controls-card">
+
+
+                        <!-- =================================================
+                             TÍTULO
+                             ================================================= -->
+
+                        <div class="section-title">
+
+                            <i class="bi bi-sliders"></i>
+
+                            <span>Controles RGB</span>
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             ROJO
+                             ================================================= -->
+
+                        <div class="rgb-control">
+
+                            <div class="control-header">
+
+                                <label for="rojo">
+
+                                    <span class="color-dot rojo"></span>
+
+                                    Rojo (R)
+
+                                </label>
+
+
+                                <input
+                                    type="number"
+                                    id="valorRojo"
+                                    min="0"
+                                    max="255"
+                                    value="194"
+                                    class="rgb-number"
+                                >
+
+                            </div>
+
+
+                            <input
+                                type="range"
+                                id="rojo"
+                                min="0"
+                                max="255"
+                                value="194"
+                                class="form-range"
+                            >
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             VERDE
+                             ================================================= -->
+
+                        <div class="rgb-control">
+
+                            <div class="control-header">
+
+                                <label for="verde">
+
+                                    <span class="color-dot verde"></span>
+
+                                    Verde (G)
+
+                                </label>
+
+
+                                <input
+                                    type="number"
+                                    id="valorVerde"
+                                    min="0"
+                                    max="255"
+                                    value="123"
+                                    class="rgb-number"
+                                >
+
+                            </div>
+
+
+                            <input
+                                type="range"
+                                id="verde"
+                                min="0"
+                                max="255"
+                                value="123"
+                                class="form-range"
+                            >
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             AZUL
+                             ================================================= -->
+
+                        <div class="rgb-control">
+
+                            <div class="control-header">
+
+                                <label for="azul">
+
+                                    <span class="color-dot azul"></span>
+
+                                    Azul (B)
+
+                                </label>
+
+
+                                <input
+                                    type="number"
+                                    id="valorAzul"
+                                    min="0"
+                                    max="255"
+                                    value="76"
+                                    class="rgb-number"
+                                >
+
+                            </div>
+
+
+                            <input
+                                type="range"
+                                id="azul"
+                                min="0"
+                                max="255"
+                                value="76"
+                                class="form-range"
+                            >
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             SELECTOR DE COLOR
+                             ================================================= -->
+
+                        <div class="color-picker-section">
+
+                            <label
+                                for="colorPicker"
+                                class="picker-label"
+                            >
+
+                                <i class="bi bi-eyedropper"></i>
+
+                                Seleccionar color
+
+                            </label>
+
+
+                            <input
+                                type="color"
+                                id="colorPicker"
+                                value="#C27B4C"
+                                class="color-picker"
+                            >
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             RESULTADOS
+                             ================================================= -->
+
+                        <div class="results">
+
+
+                            <!-- RGB -->
+
+                            <div class="result-box">
+
+                                <div class="result-title">
+
+                                    <i class="bi bi-braces"></i>
+
+                                    Código RGB
+
+                                </div>
+
+
+                                <div
+                                    id="rgbColor"
+                                    class="result-value"
+                                >
+                                    rgb(194, 123, 76)
+                                </div>
+
+
+                                <button
+                                    id="copiarRGB"
+                                    class="copy-button"
+                                    type="button"
+                                >
+
+                                    <i class="bi bi-clipboard"></i>
+
+                                    Copiar RGB
+
+                                </button>
+
+                            </div>
+
+
+
+                            <!-- HEX -->
+
+                            <div class="result-box">
+
+                                <div class="result-title">
+
+                                    <i class="bi bi-hash"></i>
+
+                                    Código HEX
+
+                                </div>
+
+
+                                <div
+                                    id="hexColorText"
+                                    class="result-value"
+                                >
+                                    #C27B4C
+                                </div>
+
+
+                                <button
+                                    id="copiarHEX"
+                                    class="copy-button"
+                                    type="button"
+                                >
+
+                                    <i class="bi bi-clipboard"></i>
+
+                                    Copiar HEX
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             RESTABLECER
+                             ================================================= -->
+
+                        <button
+                            id="restablecer"
+                            class="reset-button"
+                            type="button"
+                        >
+
+                            <i class="bi bi-arrow-counterclockwise"></i>
+
+                            Restablecer color
+
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PIE DE PÁGINA
+                 ================================================= -->
+
+            <footer>
+
+                <p>
+                    Práctica de Diseño Web · Manipulación de colores RGB
+                </p>
+
+            </footer>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+
+         IMPORTANTE:
+         El JS está dentro de la carpeta js.
+         ===================================================== -->
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
