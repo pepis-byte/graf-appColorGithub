@@ -221,7 +221,7 @@ header p {
        usamos ../ para regresar a la carpeta principal.
     */
 
-    background-image: url("../img/aguila.png");
+    background-image: url("img/aguila.png");
 
     background-repeat: no-repeat;
 
